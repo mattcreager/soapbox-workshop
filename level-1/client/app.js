@@ -3,7 +3,5 @@
 'use strict';
 
 angular
-  .module('Soapbox', [
-    // require('./app-controller').name
-  ])
+  .module('Soapbox', [])
   .constant('version', require('../package.json').version);

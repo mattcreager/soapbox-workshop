@@ -3,11 +3,12 @@
 /* jshint node: true */
 
 var gulp = require('gulp');
-var browserify = require('gulp-browserify');
 var clean = require('gulp-clean');
 var sass = require('gulp-sass');
 var path = require('path');
 var express = require('express');
+
+// Add another dependency for browserify
 
 var EXPRESS_PORT = 3000;
 var LIVERELOAD_PORT = 35729;
@@ -20,10 +21,6 @@ var pathTo = {
   watch: [
     './client/**/*.scss',
     './client/*.js',
- // './client/common/**/*.js',
- // './client/components/**/*.js',
- // './client/talks/**/*.js',
- // './client/events/**/*.js'
   ],
   watchBuild: [
     './client/build/*.js',
@@ -44,15 +41,11 @@ gulp.task('styles', function () {
 
 gulp.task('develop', ['clean', 'styles'], function() {
   gulp.src(pathTo.scriptEntry)
-    .pipe(browserify({ insertGlobals: false }))
-    .pipe(gulp.dest(pathTo.build));
+    /* Browserify me! */
 });
 
 gulp.task('default', ['develop'], function() {
   startExpress();
-  startLivereload();
-  gulp.watch(pathTo.watch, ['develop']);
-  gulp.watch(pathTo.watchBuild, notifyLivereload);
 });
 
 /** Development Utility Methods **/
