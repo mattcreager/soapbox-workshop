@@ -20,10 +20,10 @@ var pathTo = {
   watch: [
     './client/**/*.scss',
     './client/*.js',
-    './client/common/**/*.js',
-    './client/components/**/*.js',
-    './client/talks/**/*.js',
-    './client/events/**/*.js'
+ // './client/common/**/*.js',
+ // './client/components/**/*.js',
+ // './client/talks/**/*.js',
+ // './client/events/**/*.js'
   ],
   watchBuild: [
     './client/build/*.js',

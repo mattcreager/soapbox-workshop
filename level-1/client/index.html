@@ -15,9 +15,8 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     </head>
     <body ng-controller="AppCtrl">
-        <nav ui-view="nav"></nav>
-        <div ui-view="main" id="main" class="container">
-            <div class="page-loader"></div>
+        <div class="container">
+            <h1>{{ challengeComplete || 'Challenge Accepted' }}</h1>
         </div>
 
         <!-- Vendor components -->

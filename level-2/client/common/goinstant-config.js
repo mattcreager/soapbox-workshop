@@ -1,1 +1,0 @@
-../../../final/client/common/goinstant-config.js
