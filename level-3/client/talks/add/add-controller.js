@@ -2,12 +2,11 @@
 
 'use strict';
 
-module.exports = function AddCtrl($scope, $goUsers, $state, Talk) {
-  // Defaults
+module.exports = function AddCtrl($scope, $goUsers, $state) {
   $scope.talkVisibility = 'public';
 
-  $scope.$on("$destroy", function() {
-    console.log('Destroy has been emitted on the AddCtrl');
+  $scope.$on('$destroy', function() {
+    // Listen for mass controller destruction
   });
 
   $scope.submitTalkForm = function(isValid) {
@@ -25,12 +24,9 @@ module.exports = function AddCtrl($scope, $goUsers, $state, Talk) {
         author: selfModel.id
       };
 
-      var talk = new Talk(talkData);
+     console.log('What shall we do with this?', talkData);
 
-      talk.$save().then(function() {
-        $state.go('talks.detail', { talkId: talk.$id });
-        talk.$destroy();
-      });
+     // $state.go('talks.detail', { talkId: talk.$id });
     });
   };
 };
